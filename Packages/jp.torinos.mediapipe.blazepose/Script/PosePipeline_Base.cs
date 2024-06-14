@@ -23,6 +23,11 @@ public sealed partial class PosePipeline : System.IDisposable
 
      bool _upperbody;
 
+    public (PoseDetector pose, PoseLandmarkDetector landmark) GetDetector()
+    {
+        return _detector;
+    }
+
     void AllocateObjects()
     {
         _detector = (new PoseDetector(_resources.pose_resource),
